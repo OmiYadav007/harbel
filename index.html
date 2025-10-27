@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Herbal Health Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            position: relative;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(12px);
+            max-width: 500px;
+            text-align: center;
+            width: 100%;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .countdown {
+            font-size: 20px;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .countdown {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <script>
+        function countdownTimer() {
+            const targetDate = new Date("2025-03-20").getTime();
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+                if (difference <= 0) {
+                    clearInterval(timer);
+                    document.querySelector(".countdown").innerHTML = "We're live!";
+                    return;
+                }
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                document.querySelector(".countdown").innerHTML = `${days}D: ${hours}H: ${minutes}M: ${seconds}S`;
+            }, 1000);
+        }
+        window.onload = countdownTimer;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Herbal Health Wellness</div>
+
+        <h1>Coming Soon</h1>
+        <p>We are working on something amazing! Stay tuned for the best herbal and wellness products.</p>
+        <div class="countdown"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+
+  .paginate_button 
+   {
+   margin-left: 10px;
+   cursor:pointer !important;
+   }
+   .paginate_button 
+   {
+   margin-right: 10px;
+   cursor:pointer !important;
+   }
+   .table.dataTable{
+    width: 100% !important;
+}
+a.paginate_button.current {
+    color: #696cff !important;
+}
+
+

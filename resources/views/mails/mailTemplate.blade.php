@@ -1,0 +1,2 @@
+
+{!! $mailConfig['message'] !!}
